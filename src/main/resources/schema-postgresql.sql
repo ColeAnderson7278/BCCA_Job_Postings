@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS job_posts(
     position_benefits TEXT NOT NULL
 );
 
--- ALTER TABLE job_posts OWNER TO "user";
--- GRANT ALL ON TABLE job_posts TO "user";
--- GRANT ALL PRIVILEGES ON DATABASE "job-posting-db" TO "user";
+ALTER TABLE job_posts OWNER TO "user";
+GRANT ALL ON TABLE job_posts TO "user";
+GRANT ALL PRIVILEGES ON DATABASE "job-posting-db" TO "user";

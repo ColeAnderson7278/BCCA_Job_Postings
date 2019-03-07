@@ -2,6 +2,43 @@ body {
     background-color: var(--base-light-blue);
 }
 
-.container {
+.postContainer {
     background-color: white;
+    border-radius: 4px;
+    display: flex;
+    margin: 1.5% 10%;
+    transition: all 0.2s ease-in-out;
+}
+
+.postContainer:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.postInfoContainer {
+    padding: 1%;
+}
+
+.postCompanyName {
+    font-size: 200%;
+    margin: 0;
+}
+
+.postPosition {
+    font-size: 150%;
+    margin: 0;
+}
+
+.infoLink {
+    text-decoration: none;
+    font-size: 100%;
+}
+
+.postImage {
+    width: 20%;
+}
+
+#noDataMessage {
+    color: red;
+    font-size: 18px;
 }
