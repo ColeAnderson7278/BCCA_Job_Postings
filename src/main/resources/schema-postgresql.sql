@@ -8,11 +8,9 @@ CREATE TABLE IF NOT EXISTS job_posts(
     company_address TEXT NOT NULL,
     position TEXT NOT NULL,
     position_details TEXT NOT NULL,
-    position_benefits TEXT NOT NULL,
-    posted_date TEXT NOT NULL
+    position_benefits TEXT NOT NULL
 );
 
--- ALTER TABLE applications OWNER TO "user";
--- GRANT ALL ON TABLE applications TO "user";
-
--- GRANT ALL PRIVILEGES ON DATABASE "application-db" TO "user";
+-- ALTER TABLE job_posts OWNER TO "user";
+-- GRANT ALL ON TABLE job_posts TO "user";
+-- GRANT ALL PRIVILEGES ON DATABASE "job-posting-db" TO "user";

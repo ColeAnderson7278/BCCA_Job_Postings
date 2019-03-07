@@ -1,7 +1,7 @@
 package com.cole_anderson.base_camp_job_postings.models;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+// import java.time.LocalDateTime;
+// import java.time.format.DateTimeFormatter;
 
 import javax.validation.constraints.NotNull;
 
@@ -29,7 +29,7 @@ public class JobPost {
     @NotNull
     public String position_benefits;
 
-    public String posted_date;
+    // public String posted_date;
 
     public JobPost(Integer id, String company_name, String company_phone, String company_email, String company_address,
             String position, String position_details, String position_benefits) {
@@ -107,11 +107,12 @@ public class JobPost {
         this.position_benefits = benefits;
     }
 
-    public String getPostedDate() {
-        return this.posted_date;
-    }
+    // public String getPostedDate() {
+    // return this.posted_date;
+    // }
 
-    public void setPostedDate() {
-        this.posted_date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
+    // public void setPostedDate() {
+    // this.posted_date =
+    // LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    // }
 }
