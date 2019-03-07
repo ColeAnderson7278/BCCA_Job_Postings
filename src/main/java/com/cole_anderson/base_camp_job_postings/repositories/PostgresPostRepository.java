@@ -1,6 +1,7 @@
 package com.cole_anderson.base_camp_job_postings.repositories;
 
 import java.util.List;
+import java.util.Optional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -29,6 +30,10 @@ public class PostgresPostRepository
 
     public List<JobPost> findAllPosts() {
         return jdbc.query("SELECT * FROM job_posts;", this::mapToJobPost);
+    }
+
+    public Optional<JobPost> findById(Integer id) {
+        return Optional.ofNullable(jdbc.queryForObject("SELECT * FROM job_posts WHERE id= ?;", this::mapToJobPost, id));
     }
 
     public JobPost mapToJobPost(ResultSet rs, int rowNum) throws SQLException {
