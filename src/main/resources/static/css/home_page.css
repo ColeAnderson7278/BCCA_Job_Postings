@@ -1,0 +1,7 @@
+body {
+    background-color: var(--base-light-blue);
+}
+
+.container {
+    background-color: white;
+}
