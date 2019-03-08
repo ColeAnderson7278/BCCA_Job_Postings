@@ -2,9 +2,48 @@
     --base-brown: #3b1b0c;
     --base-blue: #65849d;
     --base-light-blue: #d1d3df;
+    --base-faded-black: rgb(66, 66, 66);
+    --base-grey: rgb(184, 184, 184);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--base-light-blue);
+    margin: 0;
+    padding: 0;
 }
 
 .hidden {
     display: none;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--base-brown);
+}
+
+.nav-item {
+    float: left;
+}
+
+.nav-link {
+    display: block;
+    color: var(--base-light-blue);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-link:active,
+.nav-link:focus {
+    outline: 0;
+    border: none;
+    outline-style: none;
+}
+
+.nav-link:hover {
+    color: white;
 }

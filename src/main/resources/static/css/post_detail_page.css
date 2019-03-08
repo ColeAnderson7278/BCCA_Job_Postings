@@ -1,0 +1,51 @@
+#postDetailContainer {
+    margin: 2%;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: white;
+}
+
+.postHeaderContainer {
+    display: flex;
+}
+
+#postDetailContainer img {
+    width: 75px;
+}
+
+#companyName {
+    font-size: 40px;
+    margin: 0;
+    padding: 2%;
+}
+
+.postContactContainer {
+    padding: 1%;
+}
+
+.postContactContainer p {
+    margin: 0;
+    padding-top: 5px;
+}
+
+#positionName {
+    font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.positionParaContainer {
+    padding: 1%;
+}
+
+.paraTitle {
+    font-size: 22px;
+    margin: 0;
+}
+
+.paraBody {
+    margin: 0;
+    padding: 1%;
+}

@@ -1,37 +1,45 @@
-body {
-    background-color: var(--base-light-blue);
+#totalPostsContainer {
+    display: grid;
+    margin: 20px;
+    grid-gap: 10px;
 }
 
 .postContainer {
     background-color: white;
-    border-radius: 4px;
     display: flex;
-    margin: 1.5% 10%;
     transition: all 0.2s ease-in-out;
 }
 
 .postContainer:hover {
     transform: scale(1.1);
     cursor: pointer;
+    box-shadow: 2px 4px #0000003f;
 }
 
 .postInfoContainer {
     padding: 1%;
 }
 
+.postDivLink {
+    text-decoration: none;
+    color: black;
+    border: none;
+}
+.postDivLink:active,
+.postDivLink:focus {
+    outline: 0;
+    border: none;
+    outline-style: none;
+}
+
 .postCompanyName {
-    font-size: 200%;
+    font-size: 26px;
     margin: 0;
 }
 
 .postPosition {
-    font-size: 150%;
+    font-size: 22px;
     margin: 0;
-}
-
-.infoLink {
-    text-decoration: none;
-    font-size: 100%;
 }
 
 .postImage {
@@ -41,4 +49,19 @@ body {
 #noDataMessage {
     color: red;
     font-size: 18px;
+}
+
+@media screen and (min-width: 750px) {
+    #totalPostsContainer {
+        grid-template-columns: 1fr 1fr;
+        margin: 20px;
+    }
+
+    .postCompanyName {
+        font-size: 28px;
+    }
+
+    .postPosition {
+        font-size: 24px;
+    }
 }

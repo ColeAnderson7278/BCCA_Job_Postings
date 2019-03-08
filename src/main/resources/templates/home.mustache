@@ -19,34 +19,33 @@
         />
     </head>
     <body>
-        {{#posts}}
-        <div class="postContainer">
-            <img
-                class="postImage"
-                src="data:image/png;base64,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"
-            />
-            <div class="postInfoContainer">
-                <p class="postCompanyName">{{ company_name }}</p>
-                <p class="postPosition">{{ position }}</p>
-            </div>
-            <p class="postId hidden">{{ id }}</p>
+        <ul class="navbar">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post_job">Posts A Job</a>
+            </li>
+        </ul>
+        <div id="totalPostsContainer">
+            {{#posts}}
+            <a class="postDivLink" href="/posts/{{ id }}">
+                <div class="postContainer">
+                    <img
+                        class="postImage"
+                        src="data:image/png;base64,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"
+                    />
+                    <div class="postInfoContainer">
+                        <p class="postCompanyName">{{ company_name }}</p>
+                        <p class="postPosition">{{ position }}</p>
+                    </div>
+                    <p class="postId hidden">{{ id }}</p>
+                </div>
+            </a>
+            {{/posts}}
         </div>
-        {{/posts}}
         {{^posts}}
         <p id="noDataMessage">*No Jobs Posts Available At This Time.</p>
         {{/posts}}
     </body>
-    <!-- <script>
-        function listenForPostClick() {
-            const posts = document.querySelectorAll(".postContainer");
-            for (var post of posts) {
-                post.addEventListener("click", function() {
-                    window.location.assign(
-                        "/posts/" + post.querySelector(".postId").innerText
-                    );
-                });
-            }
-        }
-        listenForPostClick();
-    </script> -->
 </html>
