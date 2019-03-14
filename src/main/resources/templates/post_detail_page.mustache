@@ -21,7 +21,7 @@
     <body>
         <ul class="navbar">
             <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/home">Home</a>
             </li>
         </ul>
         <div id="postDetailContainer">
@@ -47,6 +47,9 @@
                             <p class="paraTitle">Benefits:</p>
                             <p class="paraBody">{{ position_benefits }}</p>
                     </div>
+                    <a id="commentsLink" href="/posts/{{ id }}/comments"
+                >See Comments</a
+            >
             </div>
             {{/post}}
     </body>

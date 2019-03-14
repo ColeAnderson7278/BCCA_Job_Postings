@@ -25,6 +25,6 @@ public class FormController {
     @PostMapping("/post_job")
     public String postForm(JobPost post) {
         postRepostitory.saveJobPost(post);
-        return "redirect:/";
+        return "redirect:/home";
     }
 }

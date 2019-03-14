@@ -30,12 +30,19 @@ public class HomeController {
 
     @GetMapping("/posts/{id}")
     public String index(Model model, @PathVariable(value = "id") String id) {
-        var post = postRepository.findById(Integer.parseInt(id));
+        var post = postRepository.findPostById(Integer.parseInt(id));
         if (post.isPresent()) {
             model.addAttribute("post", post.get());
             return "post_detail_page";
         } else {
             return "404";
         }
+    }
+
+    @GetMapping("/posts/{id}/comments")
+    public String getPostComments(Model model, @PathVariable(value = "id") String id) {
+        var comments = postRepository.findCommentsById(Integer.parseInt(id));
+        model.addAttribute("comments", comments);
+        return "post_comments_page";
     }
 }

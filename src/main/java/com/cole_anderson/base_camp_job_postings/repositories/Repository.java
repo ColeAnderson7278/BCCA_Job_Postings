@@ -11,9 +11,9 @@ public interface Repository<T> {
 
     List<JobPost> findAllPosts();
 
-    Optional<T> findById(Integer id);
+    Optional<T> findPostById(Integer id);
 
     void saveComment(Comment comment);
 
-    List<Comment> findAllComments();
+    List<Comment> findCommentsById(Integer id);
 }

@@ -32,10 +32,12 @@ public class AdminHomeController {
     }
 
     @GetMapping("/admin/posts/{id}")
-    public String index(Model model, @PathVariable(value = "id") String id) {
-        var post = postRepository.findById(Integer.parseInt(id));
+    public String getAdminPost(Model model, @PathVariable(value = "id") String id) {
+        var post = postRepository.findPostById(Integer.parseInt(id));
+        var comments = postRepository.findCommentsById(Integer.parseInt(id));
         if (post.isPresent()) {
             model.addAttribute("post", post.get());
+            model.addAttribute("comments", comments);
             return "admin_post_detail_page";
         } else {
             return "404";
@@ -46,6 +48,13 @@ public class AdminHomeController {
     public String postComment(Comment comment, @PathVariable(value = "id") String id) {
         comment.setPostId(Integer.parseInt(id));
         postRepository.saveComment(comment);
-        return "redirect:/admin/home";
+        return "redirect:/admin/posts/" + id + "/comments";
+    }
+
+    @GetMapping("/admin/posts/{id}/comments")
+    public String getAdminPostComments(Model model, @PathVariable(value = "id") String id) {
+        var comments = postRepository.findCommentsById(Integer.parseInt(id));
+        model.addAttribute("comments", comments);
+        return "admin_post_comments_page";
     }
 }

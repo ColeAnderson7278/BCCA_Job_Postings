@@ -48,37 +48,10 @@
                     <p class="paraBody">{{ position_benefits }}</p>
                 </div>
             </div>
-            <div class="adminPostContainer">
-                <button id="addCommentButton">Add Comment</button>
-                <div id="commentModal">
-                    <div id="commentModalContent">
-                        <form method="POST" action="/admin/posts/{{ id }}">
-                            <div class="inputContainer">
-                                <p>Your Name:</p>
-                                <input type="text" name="admin_name" required />
-                            </div>
-                            <div class="inputContainer">
-                                <p>Your Comment:</p>
-                                <input type="text" name="comment" required />
-                            </div>
-                            <button id="formSubmitBtn" type="submit">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <a id="commentsLink" href="/posts/{{ id }}/comments"
+                >See Comments</a
+            >
             {{/post}}
         </div>
     </body>
-    <script>
-        function activateModal() {
-            const modalButton = document.querySelector("#addCommentButton");
-            const modal = document.querySelector("#commentModal");
-            modalButton.addEventListener("click", function() {
-                modal.style.display = "block";
-            });
-        }
-        activateModal();
-    </script>
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Comments</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./../../../css/main.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./../../../css/post_comments_page.css"
+        />
+    </head>
+    <body>
+        <ul class="navbar">
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" onclick="history.back()">Back</a>
+            </li>
+        </ul>
+        <button id="addCommentButton">Add Comment</button>
+        <div id="commentModal">
+            <div id="commentModalContent">
+                <form method="POST" action="/admin/posts/{{ id }}">
+                    <div class="inputContainer">
+                        <p>Your Name:</p>
+                        <input
+                            id="nameInput"
+                            type="text"
+                            name="admin_name"
+                            required
+                        />
+                    </div>
+                    <div class="inputContainer">
+                        <p>Your Comment:</p>
+                        <input
+                            id="commentInput"
+                            type="text"
+                            name="comment"
+                            required
+                        />
+                    </div>
+                    <button id="formSubmitBtn" type="submit">
+                        Submit
+                    </button>
+                </form>
+                <button id="formCancelButton">
+                    Cancel
+                </button>
+            </div>
+        </div>
+        <div class="totalCommentsContainer">
+            {{#comments}}
+            <div class="commentContainer">
+                <p id="comment">{{ comment }}</p>
+                <p id="name">By: {{ admin_name }}</p>
+            </div>
+            {{/comments}}
+            {{^comments}}
+            <div class="commentContainer">
+                <p id="noCommentsMessage">
+                    Sorry but there are no comments at this time.
+                </p>
+            </div>
+            {{/comments}}
+        </div>
+        <script>
+            function activateModal() {
+                const modalButton = document.querySelector("#addCommentButton");
+                const modal = document.querySelector("#commentModal");
+                modalButton.addEventListener("click", function() {
+                    modal.style.display = "block";
+                });
+            }
+            activateModal();
+
+            function deactivateModal() {
+                const cancelButton = document.querySelector(
+                    "#formCancelButton"
+                );
+                const modal = document.querySelector("#commentModal");
+                cancelButton.addEventListener("click", function() {
+                    clearInputs();
+                    modal.style.display = "none";
+                });
+            }
+            deactivateModal();
+
+            function clearInputs() {
+                const nameInput = document.querySelector("#nameInput");
+                const commentInput = document.querySelector("#commentInput");
+                nameInput.value = "";
+                commentInput.value = "";
+            }
+        </script>
+    </body>
+</html>

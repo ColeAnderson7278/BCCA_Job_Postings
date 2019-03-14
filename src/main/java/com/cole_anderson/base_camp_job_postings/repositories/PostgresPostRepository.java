@@ -33,7 +33,7 @@ public class PostgresPostRepository
         return jdbc.query("SELECT * FROM job_posts;", this::mapToJobPost);
     }
 
-    public Optional<JobPost> findById(Integer id) {
+    public Optional<JobPost> findPostById(Integer id) {
         return Optional.ofNullable(jdbc.queryForObject("SELECT * FROM job_posts WHERE id= ?;", this::mapToJobPost, id));
     }
 
@@ -49,11 +49,11 @@ public class PostgresPostRepository
                 comment.getComment(), comment.getPostId());
     }
 
-    public List<Comment> findAllComments() {
-        return jdbc.query("SELECT * FROM admin_comments;", this::mapToComment);
-    }
-
     public Comment mapToComment(ResultSet rs, int rowNum) throws SQLException {
         return new Comment(rs.getInt("id"), rs.getString("admin_name"), rs.getString("comment"), rs.getInt("post_id"));
+    }
+
+    public List<Comment> findCommentsById(Integer id) {
+        return jdbc.query("SELECT * FROM admin_comments WHERE post_id= ?;", this::mapToComment, id);
     }
 }
