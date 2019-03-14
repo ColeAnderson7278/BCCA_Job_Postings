@@ -5,7 +5,6 @@ import java.util.List;
 import com.cole_anderson.base_camp_job_postings.models.JobPost;
 import com.cole_anderson.base_camp_job_postings.models.Comment;
 import com.cole_anderson.base_camp_job_postings.repositories.Repository;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.cole_anderson.base_camp_job_postings.repositories.PostgresPostRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
