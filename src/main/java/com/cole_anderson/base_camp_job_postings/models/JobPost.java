@@ -2,8 +2,6 @@ package com.cole_anderson.base_camp_job_postings.models;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotNull;
-
 public class JobPost {
     public Integer id;
     public String company_name;

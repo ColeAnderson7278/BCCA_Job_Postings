@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS admin_comments(
     id SERIAL PRIMARY KEY NOT NULL,
     admin_name TEXT NOT NULL,
     comment TEXT NOT NULL,
-    post_id INTEGER REFERENCES job_posts (id)
+    post_id INTEGER REFERENCES job_posts (id),
+    posted_date DATE NOT NULL
 );
 
 ALTER TABLE job_posts OWNER TO "user";

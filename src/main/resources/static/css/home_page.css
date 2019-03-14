@@ -35,8 +35,16 @@
 }
 
 .postPosition {
-    font-size: 22px;
+    font-size: 24px;
     margin: 0;
+    margin-top: 10px;
+}
+
+.postedDate {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 15px;
+    color: var(--base-blue);
 }
 
 .postImage {

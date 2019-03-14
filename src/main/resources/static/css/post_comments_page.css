@@ -9,11 +9,21 @@
 
 #comment {
     font-size: 21px;
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 #name {
     font-size: 16px;
     text-align: right;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+#date {
+    font-size: 16px;
+    text-align: right;
+    margin: 0;
 }
 
 #commentModal {

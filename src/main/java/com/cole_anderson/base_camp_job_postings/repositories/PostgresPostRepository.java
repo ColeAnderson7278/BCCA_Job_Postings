@@ -44,16 +44,18 @@ public class PostgresPostRepository
     }
 
     public void saveComment(Comment comment) {
-        String columns = "admin_name, comment, post_id";
-        jdbc.update("INSERT INTO admin_comments (" + columns + ") VALUES (?,?,?);", comment.getAdminName(),
-                comment.getComment(), comment.getPostId());
+        String columns = "admin_name, comment, post_id, posted_date";
+        jdbc.update("INSERT INTO admin_comments (" + columns + ") VALUES (?,?,?,?);", comment.getAdminName(),
+                comment.getComment(), comment.getPostId(), comment.getPostedDate());
     }
 
     public Comment mapToComment(ResultSet rs, int rowNum) throws SQLException {
-        return new Comment(rs.getInt("id"), rs.getString("admin_name"), rs.getString("comment"), rs.getInt("post_id"));
+        return new Comment(rs.getInt("id"), rs.getString("admin_name"), rs.getString("comment"), rs.getInt("post_id"),
+                rs.getDate("posted_date"));
     }
 
     public List<Comment> findCommentsById(Integer id) {
-        return jdbc.query("SELECT * FROM admin_comments WHERE post_id= ?;", this::mapToComment, id);
+        return jdbc.query("SELECT * FROM admin_comments WHERE post_id= ? ORDER BY posted_date DESC;",
+                this::mapToComment, id);
     }
 }

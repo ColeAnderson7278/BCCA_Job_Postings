@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cole_anderson.base_camp_job_postings.models.JobPost;
 import com.cole_anderson.base_camp_job_postings.models.Comment;
+import com.cole_anderson.base_camp_job_postings.models.CommentForm;
 import com.cole_anderson.base_camp_job_postings.repositories.Repository;
 import com.cole_anderson.base_camp_job_postings.repositories.PostgresPostRepository;
 
@@ -44,8 +45,8 @@ public class AdminHomeController {
     }
 
     @PostMapping("/admin/posts/{id}")
-    public String postComment(Comment comment, @PathVariable(value = "id") String id) {
-        comment.setPostId(Integer.parseInt(id));
+    public String postComment(CommentForm form, @PathVariable(value = "id") String id) {
+        Comment comment = new Comment(form.getAdminName(), form.getComment(), Integer.parseInt(id));
         postRepository.saveComment(comment);
         return "redirect:/admin/posts/" + id + "/comments";
     }
