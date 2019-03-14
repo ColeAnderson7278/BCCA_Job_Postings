@@ -10,9 +10,12 @@
     transition: all 0.2s ease-in-out;
 }
 
-.postContainer:hover {
+.postContainer:hover,
+.postDivLink:active,
+.postDivLink:focus {
     transform: scale(1.1);
     cursor: pointer;
+    outline: 0;
     box-shadow: 2px 4px #0000003f;
 }
 
@@ -24,12 +27,6 @@
     text-decoration: none;
     color: black;
     border: none;
-}
-.postDivLink:active,
-.postDivLink:focus {
-    outline: 0;
-    border: none;
-    outline-style: none;
 }
 
 .postCompanyName {

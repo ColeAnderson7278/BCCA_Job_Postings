@@ -11,6 +11,17 @@ CREATE TABLE IF NOT EXISTS job_posts(
     position_benefits TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS admin_comments(
+    id SERIAL PRIMARY KEY NOT NULL,
+    admin_name TEXT NOT NULL,
+    comment TEXT NOT NULL,
+    post_id INTEGER REFERENCES job_posts (id)
+);
+
 ALTER TABLE job_posts OWNER TO "user";
 GRANT ALL ON TABLE job_posts TO "user";
+ALTER TABLE admin_comments OWNER TO "user";
+GRANT ALL ON TABLE admin_comments TO "user";
 GRANT ALL PRIVILEGES ON DATABASE "job-posting-db" TO "user";
+
+Select * from admin_comments;
