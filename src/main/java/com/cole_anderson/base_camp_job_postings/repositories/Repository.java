@@ -9,6 +9,8 @@ import com.cole_anderson.base_camp_job_postings.models.Comment;;
 public interface Repository<T> {
     void saveJobPost(JobPost post);
 
+    void deletePostById(Integer id);
+
     List<JobPost> findAllPosts();
 
     Optional<T> findPostById(Integer id);

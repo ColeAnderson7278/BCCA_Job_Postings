@@ -29,6 +29,11 @@ public class PostgresPostRepository
                 post.getPositionDetails(), post.getPositionBenefits(), post.getPostedDate());
     }
 
+    public void deletePostById(Integer id) {
+        jdbc.update("DELETE FROM admin_comments WHERE post_id = ?", id);
+        jdbc.update("DELETE FROM job_posts WHERE id = ?", id);
+    }
+
     public List<JobPost> findAllPosts() {
         return jdbc.query("SELECT * FROM job_posts ORDER BY posted_date DESC;", this::mapToJobPost);
     }
