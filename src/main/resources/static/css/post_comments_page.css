@@ -1,6 +1,6 @@
 .commentContainer {
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
@@ -26,6 +26,19 @@
     margin: 0;
 }
 
+#addCommentButton {
+    border: none;
+    background: var(--base-light-blue);
+    color: var(--base-blue);
+    font-size: 25px;
+    margin: 10px;
+}
+
+#addCommentButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
 #commentModal {
     display: none;
     position: fixed;
@@ -40,6 +53,30 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+#commentModal input {
+    border: none;
+    border-bottom: 1px solid var(--base-grey);
+    font-size: 24px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#commentModal button {
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: var(--base-blue);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+#commentModal button:hover {
+    background-color: #2f506b;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 #commentModalContent {
     background-color: #fefefe;
     margin: auto;
@@ -51,4 +88,8 @@
 #noCommentsMessage {
     color: red;
     font-size: 20px;
+}
+
+#formSubmitBtn {
+    margin-bottom: 10px;
 }

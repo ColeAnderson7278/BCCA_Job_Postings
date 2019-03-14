@@ -5,11 +5,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Port Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/main.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./css/landing_page.css"
+        />
     </head>
     <body>
-        <p>Landing Page</p>
-        <a href="/home">User</a>
-        <a href="/admin/home">Admin</a>
+        <div class="portContainer">
+            <p class="containerHeader">Landing Page</p>
+            <div class="linkContainer">
+                <a href="/home"
+                    ><button class="containerLinkBtn">User</button></a
+                >
+                <a href="/admin/home"
+                    ><button class="containerLinkBtn">Admin</button></a
+                >
+            </div>
+        </div>
     </body>
 </html>
