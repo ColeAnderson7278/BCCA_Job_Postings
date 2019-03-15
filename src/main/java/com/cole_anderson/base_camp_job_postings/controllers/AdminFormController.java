@@ -25,4 +25,10 @@ public class AdminFormController {
         postRepository.deletePostById(Integer.parseInt(id));
         return "redirect:/admin/home";
     }
+
+    @PostMapping("/admin/posts/{post_id}/comments/{id}/delete")
+    public String postComment(@PathVariable(value = "id") String id, @PathVariable(value = "post_id") String post_id) {
+        postRepository.deleteCommentById(Integer.parseInt(id));
+        return "redirect:/admin/posts/" + post_id + "/comments";
+    }
 }

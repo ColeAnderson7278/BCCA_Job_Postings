@@ -100,3 +100,15 @@
 #formSubmitBtn {
     margin-bottom: 10px;
 }
+
+#commentDeleteButton {
+    border: none;
+    background: white;
+    font-size: 18px;
+    color: red;
+}
+
+#commentDeleteButton:hover {
+    color: rgb(241, 65, 65);
+    cursor: pointer;
+}

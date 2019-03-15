@@ -64,6 +64,14 @@
                 <p id="comment">{{ comment }}</p>
                 <p id="name">By: {{ admin_name }}</p>
                 <p id="date">Posted: {{ posted_date }}</p>
+                <form
+                    id="deleteCommentForm"
+                    onsubmit="event.preventDefault();"
+                    method="POST"
+                    action="/admin/posts/{{ post_id }}/comments/{{ id }}/delete"
+                >
+                    <button id="commentDeleteButton">Delete Comment</button>
+                </form>
             </div>
             {{/comments}}
             {{^comments}}

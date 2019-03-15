@@ -67,6 +67,10 @@ public class PostgresPostRepository
                 comment.getComment(), comment.getPostId(), comment.getPostedDate());
     }
 
+    public void deleteCommentById(Integer id) {
+        jdbc.update("DELETE FROM admin_comments WHERE id = ?", id);
+    }
+
     public Comment mapToComment(ResultSet rs, int rowNum) throws SQLException {
         return new Comment(rs.getInt("id"), rs.getString("admin_name"), rs.getString("comment"), rs.getInt("post_id"),
                 rs.getDate("posted_date"));

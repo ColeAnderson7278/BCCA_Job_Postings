@@ -23,5 +23,7 @@ public interface Repository<T> {
 
     void saveComment(Comment comment);
 
+    void deleteCommentById(Integer id);
+
     List<Comment> findCommentsById(Integer id);
 }

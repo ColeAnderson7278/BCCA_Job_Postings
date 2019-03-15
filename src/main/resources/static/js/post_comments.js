@@ -23,3 +23,19 @@ function clearInputs() {
     nameInput.value = "";
     commentInput.value = "";
 }
+
+function checkForDelete() {
+    const forms = document.querySelectorAll("#deleteCommentForm");
+    for (var form of forms) {
+        form.addEventListener("submit", function() {
+            var boo = confirm("Are you sure you want to delete this comment?");
+            if (boo) {
+                form.submit();
+            } else {
+                return false;
+            }
+        });
+    }
+}
+
+checkForDelete();
