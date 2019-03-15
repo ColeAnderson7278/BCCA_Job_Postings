@@ -11,6 +11,12 @@ public interface Repository<T> {
 
     void deletePostById(Integer id);
 
+    List<JobPost> findPostsAZ();
+
+    List<JobPost> findPostsZA();
+
+    List<JobPost> findPostsByOldest();
+
     List<JobPost> findAllPosts();
 
     Optional<T> findPostById(Integer id);

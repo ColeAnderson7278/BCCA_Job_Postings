@@ -34,6 +34,18 @@ public class PostgresPostRepository
         jdbc.update("DELETE FROM job_posts WHERE id = ?", id);
     }
 
+    public List<JobPost> findPostsAZ() {
+        return jdbc.query("SELECT * FROM job_posts ORDER BY company_name ASC", this::mapToJobPost);
+    }
+
+    public List<JobPost> findPostsZA() {
+        return jdbc.query("SELECT * FROM job_posts ORDER BY company_name DESC", this::mapToJobPost);
+    }
+
+    public List<JobPost> findPostsByOldest() {
+        return jdbc.query("SELECT * FROM job_posts ORDER BY posted_date ASC", this::mapToJobPost);
+    }
+
     public List<JobPost> findAllPosts() {
         return jdbc.query("SELECT * FROM job_posts ORDER BY posted_date DESC;", this::mapToJobPost);
     }

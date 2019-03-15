@@ -29,6 +29,21 @@
         </ul>
         <div id="selectionContainer">
             <input type="search" placeholder="Search..." id="searchBar" />
+            <form method="POST" action="/home">
+                <select
+                    id="filterSelect"
+                    name="filter_choice"
+                    onchange="this.form.submit()"
+                >
+                    <option selected>Select a Filter</option>
+                    <option name="filter_choice" value="az">A-Z</option>
+                    <option name="filter_choice" value="za">Z-A</option>
+                    <option name="filter_choice" value="">Newest First</option>
+                    <option name="filter_choice" value="oldest"
+                        >Oldest First</option
+                    >
+                </select>
+            </form>
         </div>
         <div id="totalPostsContainer">
             {{#posts}}
