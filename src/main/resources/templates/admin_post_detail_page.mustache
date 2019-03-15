@@ -66,22 +66,17 @@
             ></form>
             {{/post}}
         </div>
+        <script src="./../../js/post_detail.js"></script>
         <script>
-            function checkDelete() {
-                const form = document.querySelector("#deleteForm");
-                const deleteBtn = document.querySelector("#deleteBtn");
-                deleteBtn.addEventListener("click", function() {
-                    var boo = confirm(
-                        "Are you sure you want to delete this post?"
-                    );
-                    if (boo) {
-                        form.submit();
-                    } else {
-                        return false;
-                    }
-                });
+            function testImage() {
+                const img = document.querySelector(".postImage");
+                img.onerror = function() {
+                    img.src =
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeZlHaWbBEi-bgPLa5lUErA1keHW4D8dxnaCfkAIEuxQQ3VLO";
+                };
             }
-            checkDelete();
+
+            testImage();
         </script>
     </body>
 </html>

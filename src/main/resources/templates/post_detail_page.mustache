@@ -28,7 +28,7 @@
             {{#post}}
             <div class="postHeaderContainer">
                 <div id="imageContainer">
-                    <img class="postImage" src="{{ image_url }}" />
+                    <img class="postImage" onerror="image_error(this.id)" src="{{ image_url }}" />
                 </div>
                 <p id="companyName">{{ company_name }}</p>
             </div>
@@ -56,5 +56,15 @@
             >
             </div>
             {{/post}}
+            <script>
+                function testAllImages() {
+                    const images = document.querySelectorAll(".postImage");
+                    for (var img of images) {
+                    img.onerror = function() {
+                        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeZlHaWbBEi-bgPLa5lUErA1keHW4D8dxnaCfkAIEuxQQ3VLO";};
+                    }
+                }
+                testAllImages();
+            </script>
     </body>
 </html>

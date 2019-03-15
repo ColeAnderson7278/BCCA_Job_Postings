@@ -24,3 +24,14 @@ function searchApplications() {
         }
     }
 }
+
+function testAllImages() {
+    const images = document.querySelectorAll(".postImage");
+    for (var img of images) {
+        img.addEventListener("error", function() {
+            img.src = "/images/no_image.png";
+        });
+    }
+}
+
+testAllImages();
