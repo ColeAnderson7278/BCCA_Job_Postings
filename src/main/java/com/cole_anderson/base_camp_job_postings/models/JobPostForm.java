@@ -24,8 +24,11 @@ public class JobPostForm {
     @NotNull
     public String position_benefits;
 
+    @NotNull
+    public String image_url;
+
     public JobPostForm(String company_name, String company_phone, String company_email, String company_address,
-            String position, String position_details, String position_benefits) {
+            String position, String position_details, String position_benefits, String image_url) {
         this.company_name = company_name;
         this.company_phone = company_phone;
         this.company_email = company_email;
@@ -33,6 +36,7 @@ public class JobPostForm {
         this.position = position;
         this.position_details = position_details;
         this.position_benefits = position_benefits;
+        this.image_url = image_url;
     }
 
     public String getCompanyName() {
@@ -89,5 +93,13 @@ public class JobPostForm {
 
     public void setPositionBenefits(String benefits) {
         this.position_benefits = benefits;
+    }
+
+    public String getImageURL() {
+        return this.image_url.trim();
+    }
+
+    public void setImageURL(String image_url) {
+        this.image_url = image_url;
     }
 }

@@ -70,3 +70,13 @@
     background-color: white;
     font-size: 18px;
 }
+
+#imageContainer {
+    width: 15%;
+    display: flex;
+    align-content: center;
+}
+
+.postImage {
+    width: 100%;
+}

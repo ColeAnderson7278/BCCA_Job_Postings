@@ -47,8 +47,14 @@
     color: var(--base-blue);
 }
 
+#imageContainer {
+    width: 25%;
+    height: 140px;
+    padding: 1%;
+}
+
 .postImage {
-    width: 20%;
+    width: 100%;
 }
 
 #noDataMessage {

@@ -26,7 +26,8 @@ public class FormController {
     @PostMapping("/post_job")
     public String postForm(JobPostForm form) {
         JobPost post = new JobPost(form.getCompanyName(), form.getCompanyPhone(), form.getCompanyEmail(),
-                form.getCompanyAddress(), form.getPosition(), form.getPositionDetails(), form.getPositionBenefits());
+                form.getCompanyAddress(), form.getPosition(), form.getPositionDetails(), form.getPositionBenefits(),
+                form.getImageURL());
         postRepostitory.saveJobPost(post);
         return "redirect:/home";
     }

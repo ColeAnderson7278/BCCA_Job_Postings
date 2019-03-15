@@ -12,9 +12,10 @@ public class JobPost {
     public String position_details;
     public String position_benefits;
     public Date posted_date;
+    public String image_url;
 
     public JobPost(String company_name, String company_phone, String company_email, String company_address,
-            String position, String position_details, String position_benefits) {
+            String position, String position_details, String position_benefits, String image_url) {
         this.company_name = company_name;
         this.company_phone = company_phone;
         this.company_email = company_email;
@@ -23,10 +24,11 @@ public class JobPost {
         this.position_details = position_details;
         this.position_benefits = position_benefits;
         this.posted_date = getDate();
+        this.image_url = image_url;
     }
 
     public JobPost(Integer id, String company_name, String company_phone, String company_email, String company_address,
-            String position, String position_details, String position_benefits, Date posted_date) {
+            String position, String position_details, String position_benefits, Date posted_date, String image_url) {
         this.id = id;
         this.company_name = company_name;
         this.company_phone = company_phone;
@@ -36,6 +38,7 @@ public class JobPost {
         this.position_details = position_details;
         this.position_benefits = position_benefits;
         this.posted_date = posted_date;
+        this.image_url = image_url;
     }
 
     public Integer getId() {
@@ -113,5 +116,13 @@ public class JobPost {
     public static Date getDate() {
         Date date = new Date();
         return new Date(date.getTime());
+    }
+
+    public String getImageURL() {
+        return this.image_url.trim();
+    }
+
+    public void setImageURL(String image_url) {
+        this.image_url = image_url;
     }
 }

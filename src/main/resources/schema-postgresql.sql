@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS job_posts(
     position TEXT NOT NULL,
     position_details TEXT NOT NULL,
     position_benefits TEXT NOT NULL,
-    posted_date DATE NOT NULL
+    posted_date DATE NOT NULL,
+    image_url TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS admin_comments(

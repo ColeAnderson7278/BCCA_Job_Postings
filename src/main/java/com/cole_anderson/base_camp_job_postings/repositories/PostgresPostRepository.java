@@ -23,10 +23,10 @@ public class PostgresPostRepository
     }
 
     public void saveJobPost(JobPost post) {
-        String columns = "company_name, company_phone, company_email, company_address, position, position_details, position_benefits, posted_date";
-        jdbc.update("INSERT INTO job_posts (" + columns + ") VALUES (?,?,?,?,?,?,?,?);", post.getCompanyName(),
+        String columns = "company_name, company_phone, company_email, company_address, position, position_details, position_benefits, posted_date, image_url";
+        jdbc.update("INSERT INTO job_posts (" + columns + ") VALUES (?,?,?,?,?,?,?,?,?);", post.getCompanyName(),
                 post.getCompanyPhone(), post.getCompanyEmail(), post.getCompanyAddress(), post.getPosition(),
-                post.getPositionDetails(), post.getPositionBenefits(), post.getPostedDate());
+                post.getPositionDetails(), post.getPositionBenefits(), post.getPostedDate(), post.getImageURL());
     }
 
     public void deletePostById(Integer id) {
@@ -57,7 +57,8 @@ public class PostgresPostRepository
     public JobPost mapToJobPost(ResultSet rs, int rowNum) throws SQLException {
         return new JobPost(rs.getInt("id"), rs.getString("company_name"), rs.getString("company_phone"),
                 rs.getString("company_email"), rs.getString("company_address"), rs.getString("position"),
-                rs.getString("position_details"), rs.getString("position_benefits"), rs.getDate("posted_date"));
+                rs.getString("position_details"), rs.getString("position_benefits"), rs.getDate("posted_date"),
+                rs.getString("image_url"));
     }
 
     public void saveComment(Comment comment) {
