@@ -24,6 +24,9 @@
                 <a class="nav-link" href="/admin/home">Home</a>
             </li>
         </ul>
+        <div id="selectionContainer">
+            <input type="search" placeholder="Search..." id="searchBar" />
+        </div>
         <div id="totalPostsContainer">
             {{#posts}}
             <a class="postDivLink" href="/admin/posts/{{ id }}">
@@ -45,5 +48,6 @@
         {{^posts}}
         <p id="noDataMessage">*No Jobs Posts Available At This Time.</p>
         {{/posts}}
+        <script src="./../js/home_page.js"></script>
     </body>
 </html>

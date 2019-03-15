@@ -27,6 +27,9 @@
                 <a class="nav-link" href="/post_job">Post A Job</a>
             </li>
         </ul>
+        <div id="selectionContainer">
+            <input type="search" placeholder="Search..." id="searchBar" />
+        </div>
         <div id="totalPostsContainer">
             {{#posts}}
             <a class="postDivLink" href="/posts/{{ id }}">
@@ -48,5 +51,6 @@
         {{^posts}}
         <p id="noDataMessage">*No Jobs Posts Available At This Time.</p>
         {{/posts}}
+        <script src="./../js/home_page.js"></script>
     </body>
 </html>
