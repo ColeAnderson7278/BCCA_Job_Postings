@@ -5,6 +5,13 @@
     margin-right: auto;
     width: 70%;
     background-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.commentContainer:hover {
+    transform: scale(1.1);
+    outline: 1px solid var(--base-blue);
+    box-shadow: 2px 4px #0000003f;
 }
 
 #comment {

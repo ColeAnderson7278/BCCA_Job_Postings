@@ -7,22 +7,18 @@
     background-color: white;
 }
 
-.postHeaderContainer {
-    display: flex;
-}
-
-#postDetailContainer img {
-    width: 75px;
-}
-
 #companyName {
-    font-size: 40px;
+    font-size: 32px;
     margin: 0;
-    padding: 2%;
+    padding: 0;
 }
 
 .postContactContainer {
     padding: 1%;
+}
+
+.postContactContainer p {
+    font-size: 14px;
 }
 
 .postContactContainer p {
@@ -31,7 +27,7 @@
 }
 
 #positionName {
-    font-size: 30px;
+    font-size: 24px;
     margin: 0;
     margin-top: 20px;
 }
@@ -41,13 +37,14 @@
 }
 
 .paraTitle {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0;
 }
 
 .paraBody {
     margin: 0;
     padding: 1%;
+    font-size: 14px;
 }
 
 .actionContainer {
@@ -72,11 +69,49 @@
 }
 
 #imageContainer {
-    width: 15%;
+    width: 25%;
     display: flex;
     align-content: center;
 }
 
 .postImage {
     width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+    #companyName {
+        font-size: 40px;
+        margin: 0;
+        padding: 2%;
+    }
+
+    .postContactContainer p {
+        font-size: 18px;
+    }
+
+    #positionName {
+        font-size: 30px;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .paraTitle {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .paraBody {
+        margin: 0;
+        padding: 1%;
+    }
+
+    .postHeaderContainer {
+        display: flex;
+    }
+
+    #imageContainer {
+        width: 15%;
+        display: flex;
+        align-content: center;
+    }
 }
