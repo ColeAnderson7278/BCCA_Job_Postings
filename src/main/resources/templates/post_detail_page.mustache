@@ -56,15 +56,17 @@
             >
             </div>
             {{/post}}
+            <!-- This script element is here for the purpose of speed so that the images are checked as quickly as possible. -->
             <script>
-                function testAllImages() {
-                    const images = document.querySelectorAll(".postImage");
-                    for (var img of images) {
-                    img.onerror = function() {
-                        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeZlHaWbBEi-bgPLa5lUErA1keHW4D8dxnaCfkAIEuxQQ3VLO";};
+                    function testAllImages() {
+                        const images = document.querySelectorAll(".postImage");
+                        for (var img of images) {
+                        img.onerror = function() {
+                            img.src = "/images/no_image.png";};
+                        }
                     }
-                }
-                testAllImages();
-            </script>
+                    testAllImages();
+                </script>
+            <script src="./../../js/post_detail.js"></script>
     </body>
 </html>

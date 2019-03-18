@@ -11,3 +11,12 @@ function checkDelete() {
     });
 }
 checkDelete();
+
+function testImage() {
+    const img = document.querySelector(".postImage");
+    img.onerror = function() {
+        img.src = "/images/no_image.png";
+    };
+}
+
+testImage();

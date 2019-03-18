@@ -1,7 +1,5 @@
 package com.cole_anderson.base_camp_job_postings.controllers;
 
-import java.util.List;
-
 import com.cole_anderson.base_camp_job_postings.models.JobPost;
 import com.cole_anderson.base_camp_job_postings.repositories.Repository;
 import com.cole_anderson.base_camp_job_postings.repositories.PostgresPostRepository;
