@@ -1,8 +1,10 @@
 #totalPostsContainer {
     display: grid;
-    margin: 2%;
+    margin: 1% 2%;
     padding: 2%;
     grid-gap: 10px;
+    overflow: scroll;
+    height: 450px;
 }
 
 .postContainer {
@@ -14,7 +16,7 @@
 .postContainer:hover,
 .postDivLink:active,
 .postDivLink:focus {
-    transform: scale(1.1);
+    transform: scale(1.08);
     cursor: pointer;
     outline: 1px solid var(--base-blue);
     box-shadow: 2px 4px #0000003f;
@@ -69,6 +71,7 @@
     border: none;
     border-radius: 4px;
     border-bottom: 2px solid gray;
+    padding: 5px 10px;
 }
 
 @media screen and (max-width: 400px) {
@@ -122,14 +125,14 @@
 
 #selectionContainer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: -20px;
     width: auto;
 }
 
 #filterSelect {
     border: none;
     border-radius: 4px;
-    margin-top: 10px;
+    margin-top: 2%;
     font-size: 20px;
     color: white;
     background-color: var(--base-blue);
