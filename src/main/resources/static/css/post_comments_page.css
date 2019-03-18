@@ -1,3 +1,8 @@
+.totalCommentsContainer {
+    overflow: scroll;
+    height: 675px;
+}
+
 .commentContainer {
     margin: 2%;
     padding: 2%;
